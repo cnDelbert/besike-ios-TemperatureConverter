@@ -42,15 +42,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        let screen = UIScreen.mainScreen()
-        println("screen fixed bounds: \(screen.fixedCoordinateSpace.bounds)")
-        println("screen bounds: \(screen.bounds)")
-        println("top layout guide: \(topLayoutGuide.length)")
-        titleLabel.frame = CGRect(x: 0.0, y: topLayoutGuide.length+16.0, width: screen.bounds.width, height: 21.0)
-    }
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//        
+//        let screen = UIScreen.mainScreen()
+//        println("screen fixed bounds: \(screen.fixedCoordinateSpace.bounds)")
+//        println("screen bounds: \(screen.bounds)")
+//        println("top layout guide: \(topLayoutGuide.length)")
+//        titleLabel.frame = CGRect(x: 0.0, y: topLayoutGuide.length+16.0, width: screen.bounds.width, height: 21.0)
+//    }
 
 }
 
