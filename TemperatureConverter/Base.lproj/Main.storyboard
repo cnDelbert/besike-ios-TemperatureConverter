@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Temperature Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqM-BP-dhm">
-                                <rect key="frame" x="72" y="20" width="176" height="21"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWh-KD-VXQ">
                                 <rect key="frame" x="16" y="122" width="80" height="21"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,8 +56,62 @@
                                     <action selector="temperatureSliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="eP2-33-cSb"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqM-BP-dhm">
+                                <rect key="frame" x="16" y="36" width="568" height="21"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="999" constant="500" id="pjf-gY-cbd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pjf-gY-cbd"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="pjf-gY-cbd"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🌗☀️" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUF-0V-DWH">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pUF-0V-DWH" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="678" id="0rl-kE-xET"/>
+                            <constraint firstItem="WqM-BP-dhm" firstAttribute="top" secondItem="3tR-ws-iDn" secondAttribute="bottom" constant="16" id="GAC-Re-hkf"/>
+                            <constraint firstAttribute="centerX" secondItem="WqM-BP-dhm" secondAttribute="centerX" id="MNF-wT-wH8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WqM-BP-dhm" secondAttribute="trailing" priority="999" id="tfR-By-6wb"/>
+                            <constraint firstItem="pUF-0V-DWH" firstAttribute="top" secondItem="WqM-BP-dhm" secondAttribute="bottom" constant="65" id="xPe-0g-v95"/>
+                            <constraint firstItem="WqM-BP-dhm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="zuv-IS-fFf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="pUF-0V-DWH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="MNF-wT-wH8"/>
+                                <exclude reference="0rl-kE-xET"/>
+                                <exclude reference="xPe-0g-v95"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="pUF-0V-DWH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="MNF-wT-wH8"/>
+                                <include reference="0rl-kE-xET"/>
+                                <include reference="xPe-0g-v95"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="celsiusLabel" destination="ZWh-KD-VXQ" id="HcW-O6-UAT"/>
